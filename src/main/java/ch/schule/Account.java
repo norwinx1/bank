@@ -21,26 +21,16 @@ public class Account {
         this.id = id;
     }
 
-    public boolean deposit(long amount) {
-        // 1. positiver Betrag sonst false
+    public void deposit(long amount) {
         if (amount > 0) {
             balance += amount;
-            // 2. Betrag einzahlen und true zurück
-            return true;
         }
-        // 2. Betrag nicht einbezahlt und false zurück
-        return false;
     }
 
-    public boolean withdraw(long amount) {
-        // 1. positiver Betrag sonst false
+    public void withdraw(long amount) {
         if (amount > 0) {
             balance -= amount;
-            // 2. Betrag abheben und true zurück
-            return true;
         }
-        // Es konnte nicht abgehoben werden
-        return false;
     }
 
 }
