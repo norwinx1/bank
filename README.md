@@ -2,9 +2,9 @@
 
 In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- und Klassendiagramme zu allen Bank Aufgaben.
 
-##Bank 2
-###Anwendungsfälle
-####Kontoeröffnung
+## Bank 2
+### Anwendungsfälle
+#### Kontoeröffnung
 | Name             | **Kunde eröffnet am Bankschalter ein Bankkonto**                                 |
 |------------------|----------------------------------------------------------------------------------|
 | Kurzbeschreibung | Der Bankangestellte eröffnet für den Kunden am Bankschalter ein neues Bankkonto. |
@@ -15,7 +15,7 @@ In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- 
 | Ergebnis         | Bestätigung der Kontoeröffnung                                                   |
 | Nachbedingung    | Für den Kunden wurde ein Bankkonto eröffnet.                                     |
 | Ablauf           | 1. Bankkonto eröffnen <br/> 2. Eröffnung bestätigen                              |
-####Einzahlung und Auszahlung
+#### Einzahlung und Auszahlung
 | Name             | **Kunde tätigt eine Ein- oder Auszahlung am Bankschalter ein**                                         |
 |------------------|--------------------------------------------------------------------------------------------------------|
 | Kurzbeschreibung | Der Bankangestellte tätigt für den Kunden am Bankschalter eine Ein- oder Auszahlung.                   |
@@ -26,7 +26,7 @@ In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- 
 | Ergebnis         | Bestätigung der Ein- oder Auszahlung                                                                   |
 | Nachbedingung    | Für den Kunden wurde eine Ein- oder Auszahlung für sein Konto getätigt.                                |
 | Ablauf           | 1. Kundenkonto identifizieren <br/> 2. Geldmenge überprüfen <br/> 3. Auf Bankkonto ein- oder auszahlen |
-####Kontoauszug
+#### Kontoauszug
 | Name             | **Kunde erhält einen Kontoauszug für sein Bankkonto**                  |
 |------------------|------------------------------------------------------------------------|
 | Kurzbeschreibung | Der Bankangestellte gibt dem Kunden am Bankschalter einen Kontoauszug. |
@@ -37,10 +37,10 @@ In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- 
 | Ergebnis         | Kunde erhält Kontoauszug                                               |
 | Nachbedingung    | -                                                                      |
 | Ablauf           | 1. Kundenkonto identifizieren <br/> 2. Kontoauszug ausgeben            |
-###Klassendiagramm
+### Klassendiagramm
 ![](classDiagram1.png)
-##Bank 3
-####Buchung auslösen
+## Bank 3
+#### Buchung auslösen
 | Name             | **Kunde löste eine Buchung für sein Bankkonto aus**                    |
 |------------------|------------------------------------------------------------------------|
 | Kurzbeschreibung | Der Bankangestellte gibt dem Kunden am Bankschalter einen Kontoauszug. |
