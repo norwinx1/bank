@@ -41,13 +41,15 @@ In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- 
 ![](classDiagram1.png)
 ## Bank 3
 #### Buchung auslösen
-| Name             | **Kunde löste eine Buchung für sein Bankkonto aus**                    |
-|------------------|------------------------------------------------------------------------|
-| Kurzbeschreibung | Der Bankangestellte gibt dem Kunden am Bankschalter einen Kontoauszug. |
-| Akteure          | Kunde, Bankangestellter                                                |
-| Auslöser         | Der Kunde möchte einen Kontoauszug für sein Konto erhalten.            |
-| Vorbedingungen   | Der Kunde muss ein Bankkonto besitzen.                                 |
-| Eingehende Infos | Kundenkonto                                                            |
-| Ergebnis         | Kunde erhält Kontoauszug                                               |
-| Nachbedingung    | -                                                                      |
-| Ablauf           | 1. Kundenkonto identifizieren <br/> 2. Kontoauszug ausgeben            |
+| Name             | **Kunde löste eine Buchung für sein Bankkonto aus**     |
+|------------------|---------------------------------------------------------|
+| Kurzbeschreibung | Der Kunde teilt dem Bankangestellter seine Buchung mit. |
+| Akteure          | Kunde, Bankangestellter                                 |
+| Auslöser         | Der Kunde möchte eine Buchung für sein Konto auslösen.  |
+| Vorbedingungen   | Der Kunde muss ein Bankkonto besitzen.                  |
+| Eingehende Infos | Kundenkonto, Geldmenge                                  |
+| Ergebnis         | Geldmenge wird ein- oder ausgezahlt                     |
+| Nachbedingung    | -                                                       |
+| Ablauf           | 1. Kundenkonto identifizieren <br/> 2. Buchung auslösen |
+### Klassendiagramm
+![](classDiagram2.png)
