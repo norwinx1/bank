@@ -1,4 +1,4 @@
-#BBW M326 Bank
+# BBW M326 Bank
 
 In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- und Klassendiagramme zu allen Bank Aufgaben.
 
@@ -40,3 +40,14 @@ In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- 
 ###Klassendiagramm
 ![](classDiagram1.png)
 ##Bank 3
+####Buchung auslösen
+| Name             | **Kunde löste eine Buchung für sein Bankkonto aus**                    |
+|------------------|------------------------------------------------------------------------|
+| Kurzbeschreibung | Der Bankangestellte gibt dem Kunden am Bankschalter einen Kontoauszug. |
+| Akteure          | Kunde, Bankangestellter                                                |
+| Auslöser         | Der Kunde möchte einen Kontoauszug für sein Konto erhalten.            |
+| Vorbedingungen   | Der Kunde muss ein Bankkonto besitzen.                                 |
+| Eingehende Infos | Kundenkonto                                                            |
+| Ergebnis         | Kunde erhält Kontoauszug                                               |
+| Nachbedingung    | -                                                                      |
+| Ablauf           | 1. Kundenkonto identifizieren <br/> 2. Kontoauszug ausgeben            |
