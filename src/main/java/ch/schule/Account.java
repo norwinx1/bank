@@ -5,6 +5,10 @@ public class Account {
     private long balance = 0;
     private String id;
 
+    public Account(String accountNumber) {
+        this.id = accountNumber;
+    }
+
     public long getBalance() {
         return balance;
     }
