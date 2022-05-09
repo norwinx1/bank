@@ -1,6 +1,7 @@
 package ch.schule.bank;
 
 import ch.schule.Account;
+import ch.schule.accounts.SalaryAccount;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -50,7 +51,7 @@ public class AccountsTests {
 
     @Test
     public void testWithdraw() {
-        Account a = new Account("A-1000");
+        Account a = new SalaryAccount("A-1000");
 
         // CHF 1.-- abheben
         a.withdraw(100000);
