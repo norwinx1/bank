@@ -2,8 +2,8 @@ package ch.schule;
 
 public class Account {
 
-    private long balance = 0;
-    private String id;
+    protected long balance = 0;
+    protected String id;
 
     public Account(String accountNumber) {
         this.id = accountNumber;
@@ -32,7 +32,7 @@ public class Account {
     }
 
     public void withdraw(long amount) {
-        if (amount > 0) {
+        if (amount > 0 && balance - amount >= 0) {
             balance -= amount;
         }
     }

@@ -1,19 +1,18 @@
 package ch.schule;
 
-import java.util.ArrayList;
-import java.util.Optional;
+import java.util.*;
 
 public class Bank {
 
-    private final ArrayList<Account> accounts;
+    private final Map<String, Account> accounts;
 
     public Bank() {
-        accounts = new ArrayList<>();
+        accounts = new TreeMap<>();
     }
 
     public void createAccount(String accountNumber) {
         Account account = new Account(accountNumber);
-        accounts.add(account);
+        accounts.put(accountNumber, account);
     }
 
     public Account getAccount(String accountNumber) {
@@ -21,7 +20,7 @@ public class Bank {
     }
 
     public void deleteAccount(String accountNumber) {
-        accounts.removeIf(account -> account.getId().equals(accountNumber));
+        accounts.remove(accountNumber);
     }
 
     public void deposit(String accountNumber, long amount) {
@@ -41,8 +40,7 @@ public class Bank {
     }
 
     private Account searchAccount(String accountNumber) {
-        Optional<Account> foundAccount = accounts.stream().filter(account -> account.getId().equals(accountNumber)).findFirst();
-        return foundAccount.orElseThrow();
+        return accounts.get(accountNumber);
     }
 
     public long getBalance(String s) {
