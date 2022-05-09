@@ -65,3 +65,5 @@ In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- 
 | Ergebnis         | Ein Lohn-, Spar- oder Jugendsparkonto wurde eröffnet.         |
 | Nachbedingung    | -                                                             |
 | Ablauf           | 1. Kunde identifizieren <br/> 2. Konto eröffnen               |
+### Klassendiagramm
+![](classDiagram3.png)
