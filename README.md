@@ -53,3 +53,15 @@ In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- 
 | Ablauf           | 1. Kundenkonto identifizieren <br/> 2. Buchung auslösen |
 ### Klassendiagramm
 ![](classDiagram2.png)
+## Bank 4
+#### Lohn-, Spar- und Jugendsparkonto eröffnen
+| Name             | **Kunde eröffnet ein Lohn-, Spar- oder Jugendsparkonto**      |
+|------------------|---------------------------------------------------------------|
+| Kurzbeschreibung | Der Kunde teilt dem Bankangestellter seine Art von Konto mit. |
+| Akteure          | Kunde, Bankangestellter                                       |
+| Auslöser         | Der Kunde möchte eine neue Art von Konto eröffnen.            |
+| Vorbedingungen   | Der Kunde muss ein Bankkonto besitzen.                        |
+| Eingehende Infos | Kundenkonto, Art von Konto                                    |
+| Ergebnis         | Ein Lohn-, Spar- oder Jugendsparkonto wurde eröffnet.         |
+| Nachbedingung    | -                                                             |
+| Ablauf           | 1. Kunde identifizieren <br/> 2. Konto eröffnen               |
