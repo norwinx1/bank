@@ -4,15 +4,15 @@ public class TestBank {
 
     public static void main(String[] args) {
         Bank migros = new Bank();
-        migros.createAccount("M-301");
-        migros.createAccount("M-302");
-        migros.createAccount("M-303");
-        migros.createAccount("M-304");
+        migros.createAccount();
+        migros.createAccount();
+        migros.createAccount();
+        migros.createAccount();
 
-        System.out.println("Kontostand M-302: " + migros.getAccount("M-302").getBalance());
+        System.out.println("Kontostand A-1001: " + migros.getAccount("A-1001").getBalance());
 
-        migros.deposit("M-302", 1000000000);
-        System.out.println("Kontostand M-302: " + migros.getAccount("M-302").getBalance() / 100000 + " in Fr.");
+        migros.deposit("A-1001", 1000000000);
+        System.out.println("Kontostand A-1001: " + migros.getAccount("A-1001").getBalance() / 100000 + " in Fr.");
     }
 
 }

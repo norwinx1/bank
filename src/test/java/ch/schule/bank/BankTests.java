@@ -17,8 +17,8 @@ public class BankTests {
     public void testCreate() {
         Bank b = new Bank();
 
-        b.createAccount("A-1000");
-        b.createAccount("A-1020");
+        b.createAccount();
+        b.createAccount();
 
         assertEquals(b.getAccount("A-1000").getId(), "A-1000");
     }
@@ -26,9 +26,9 @@ public class BankTests {
     @Test
     public void testDeposit() {
         Bank b = new Bank();
-        b.createAccount("A-1000");
-        b.createAccount("A-1001");
-        b.createAccount("A-1002");
+        b.createAccount();
+        b.createAccount();
+        b.createAccount();
 
         b.deposit("A-1000", 100000);
         assertEquals(100000, b.getBalance("A-1000"));
@@ -46,9 +46,9 @@ public class BankTests {
     @Test
     public void testWithdraw() {
         Bank b = new Bank();
-        b.createAccount("A-1000");
-        b.createAccount("A-1001");
-        b.createAccount("A-1002");
+        b.createAccount();
+        b.createAccount();
+        b.createAccount();
 
         b.withdraw("A-1000", 0);
         assertEquals(0,
@@ -72,8 +72,8 @@ public class BankTests {
         System.out.println("-- Gesamtauszüge --");
         Bank b = new Bank();
 
-        b.createAccount("A-1000");
-        b.createAccount("A-1001");
+        b.createAccount();
+        b.createAccount();
 
         b.deposit("A-1000", 1);
         b.deposit("A-1001", 2);

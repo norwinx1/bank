@@ -5,12 +5,15 @@ import java.util.*;
 public class Bank {
 
     private final Map<String, Account> accounts;
+    private int accountNumberIncrement;
 
     public Bank() {
         accounts = new TreeMap<>();
+        accountNumberIncrement = 1000;
     }
 
-    public void createAccount(String accountNumber) {
+    public void createAccount() {
+        String accountNumber = "A-" + accountNumberIncrement++;
         Account account = new Account(accountNumber);
         accounts.put(accountNumber, account);
     }
