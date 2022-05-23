@@ -1,6 +1,7 @@
 package ch.schule;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Bank {
 
@@ -48,5 +49,17 @@ public class Bank {
 
     public long getBalance(String s) {
         return searchAccount(s).getBalance();
+    }
+
+    public void writeAccountsSortedAscending() {
+        List<Account> collect = accounts.values().stream().sorted(Comparator.comparingLong(Account::getBalance)).collect(Collectors.toList());
+        System.out.println("\nAccounts sorted ascending");
+        collect.forEach(it -> System.out.println("\nAccount-id:" + it.id + "\t Balance:" + it.balance));
+    }
+
+    public void writeAccountsSortedDescending() {
+        List<Account> collect = accounts.values().stream().sorted(Comparator.comparingLong(Account::getBalance).reversed()).collect(Collectors.toList());
+        System.out.println("\nAccounts sorted descending");
+        collect.forEach(it -> System.out.println("\nAccount-id:" + it.id + "\t Balance:" + it.balance));
     }
 }

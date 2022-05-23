@@ -13,6 +13,9 @@ public class TestBank {
 
         migros.deposit("A-1001", 1000000000);
         System.out.println("Kontostand A-1001: " + migros.getAccount("A-1001").getBalance() / 100000 + " in Fr.");
+
+        migros.writeAccountsSortedAscending();
+        migros.writeAccountsSortedDescending();
     }
 
 }
