@@ -16,6 +16,13 @@ public class TestBank {
 
         migros.writeAccountsSortedAscending();
         migros.writeAccountsSortedDescending();
+
+        migros.deposit("A-1002", 10);
+        migros.deposit("A-1002", 100);
+        migros.deposit("A-1002", 19837635);
+
+        migros.printAccount("A-1002");
+        migros.printAccount("A-1002", 2022, 05);
     }
 
 }

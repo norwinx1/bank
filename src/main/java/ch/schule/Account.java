@@ -1,8 +1,11 @@
 package ch.schule;
 
 import java.time.Instant;
-import java.util.HashMap;
-import java.util.Map;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.*;
+
+import static ch.schule.BankUtils.compareInstantForMonthAndYear;
 
 public class Account {
 
@@ -47,4 +50,27 @@ public class Account {
         }
     }
 
+    public void print() {
+        print(bookings.values());
+    }
+
+    public void print(Instant instant) {
+        List<Booking> filteredBookings = new LinkedList<>();
+        bookings.values().forEach(booking -> {
+            if (compareInstantForMonthAndYear(instant, booking.getInstant()))
+                filteredBookings.add(booking);
+        });
+        print(filteredBookings);
+    }
+
+    private void print(Collection<Booking> bookings) {
+        System.out.println("\n Account");
+        System.out.println("\tId: " + id);
+        System.out.println("\tBalance: " + balance);
+        System.out.println("\tBookings: ");
+        bookings.forEach(booking -> {
+            System.out.println("\t\tDate: " + booking.getInstant().toString());
+            System.out.println("\t\tAmount: " + booking.getAmount());
+        });
+    }
 }

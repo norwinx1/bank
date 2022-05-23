@@ -1,5 +1,6 @@
 package ch.schule;
 
+import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -52,14 +53,52 @@ public class Bank {
     }
 
     public void writeAccountsSortedAscending() {
-        List<Account> collect = accounts.values().stream().sorted(Comparator.comparingLong(Account::getBalance)).collect(Collectors.toList());
+        List<Account> collect = getAccountsSortedAscending();
         System.out.println("\nAccounts sorted ascending");
-        collect.forEach(it -> System.out.println("\nAccount-id:" + it.id + "\t Balance:" + it.balance));
+        printBooking(collect);
     }
 
     public void writeAccountsSortedDescending() {
-        List<Account> collect = accounts.values().stream().sorted(Comparator.comparingLong(Account::getBalance).reversed()).collect(Collectors.toList());
+        List<Account> collect = getAccountsSortedDescending();
         System.out.println("\nAccounts sorted descending");
+        printBooking(collect);
+    }
+
+    public void writeAccountsSortedAscending(int limit) {
+        List<Account> collect = getAccountsSortedAscending().stream().limit(limit).collect(Collectors.toList());
+        System.out.println("\nAccounts sorted ascending");
+        printBooking(collect);
+    }
+
+    public void writeAccountsSortedDescending(int limit) {
+        List<Account> collect = getAccountsSortedDescending().stream().limit(limit).collect(Collectors.toList());
+        System.out.println("\nAccounts sorted descending");
+        printBooking(collect);
+    }
+
+    private List<Account> getAccountsSortedAscending() {
+        return accounts.values().stream().sorted(Comparator.comparingLong(Account::getBalance)).collect(Collectors.toList());
+    }
+
+    private List<Account> getAccountsSortedDescending() {
+        return accounts.values().stream().sorted(Comparator.comparingLong(Account::getBalance).reversed()).collect(Collectors.toList());
+    }
+
+    private void printBooking(List<Account> collect) {
         collect.forEach(it -> System.out.println("\nAccount-id:" + it.id + "\t Balance:" + it.balance));
+    }
+
+    public void printAccount(String id) {
+        Account account = accounts.get(id);
+        account.print();
+    }
+
+    public void printAccount(String id, int year, int month) {
+        Account account = accounts.get(id);
+        String m = "" + month;
+        if (month < 10) {
+            m = "0" + month;
+        }
+        account.print(Instant.parse("" + year + "-" + m + "-01T00:00:00Z"));
     }
 }
