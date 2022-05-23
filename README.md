@@ -67,3 +67,17 @@ In diesem Readme befinden sich die verschiedenen Anwendungsfälle, Aktivitäts- 
 | Ablauf           | 1. Kunde identifizieren <br/> 2. Konto eröffnen               |
 ### Klassendiagramm
 ![](classDiagram3.png)
+## Bank 5
+#### Alle Konten auf- und absteigend sortiert ausgeben
+| Name             | **Alle Konten auf- und absteigend sortiert ausgeben**                        |
+|------------------|------------------------------------------------------------------------------|
+| Kurzbeschreibung | Der Bankangestellte zeigt alle Konten an.                                    |
+| Akteure          | Bankangestellter                                                             |
+| Auslöser         | Der Bankangestellte möchte alle Konten anzeigen.                             |
+| Vorbedingungen   | Die Bank muss Kunden haben.                                                  |
+| Eingehende Infos | -                                                                            |
+| Ergebnis         | Alle Konten wurden ausgegeben.                                               |
+| Nachbedingung    | -                                                                            |
+| Ablauf           | 1. Auf- oder absteigend sortiert auswählen <br/> 2. Konten werden ausgegeben |
+### Klassendiagramm
+![](classDiagram4.png)
