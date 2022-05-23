@@ -35,14 +35,6 @@ public class Bank {
         searchAccount(accountNumber).withdraw(amount);
     }
 
-    public void triggerBooking(String accountNumber, Booking booking) {
-        if (booking.getAmount() < 0) {
-            searchAccount(accountNumber).withdraw(booking.getAmount() * (-1));
-        } else {
-            searchAccount(accountNumber).deposit(booking.getAmount());
-        }
-    }
-
     private Account searchAccount(String accountNumber) {
         return accounts.get(accountNumber);
     }
