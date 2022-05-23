@@ -1,22 +1,27 @@
 package ch.schule;
 
-import java.time.LocalDate;
+import java.time.Instant;
 
 public class Booking {
-    private LocalDate date;
+    private Instant instant;
     private long amount;
 
-    public Booking(LocalDate date, long amount) {
-        this.date = date;
+    public Booking(long amount) {
+        this.instant = Instant.now();
         this.amount = amount;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Booking(Instant instant, long amount) {
+        this.instant = instant;
+        this.amount = amount;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public Instant getInstant() {
+        return instant;
+    }
+
+    public void setInstant(Instant instant) {
+        this.instant = instant;
     }
 
     public long getAmount() {
@@ -28,7 +33,7 @@ public class Booking {
     }
 
     public void print() {
-        System.out.println(date);
+        System.out.println(instant);
         System.out.println(amount);
     }
 }

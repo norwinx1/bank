@@ -4,6 +4,7 @@ import ch.schule.Booking;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -21,8 +22,8 @@ public class BookingTests {
      */
     @BeforeEach
     public void testInitialization() {
-        Booking b = new Booking(LocalDate.of(1970, 1, 1), 1000);
-        assertEquals(LocalDate.of(1970, 1, 1), b.getDate());
+        Booking b = new Booking(Instant.parse("1970-01-01T00:00:00Z"), 1000);
+        assertEquals(Instant.ofEpochMilli(0), b.getInstant());
         assertEquals(1000, b.getAmount());
     }
 
@@ -32,9 +33,9 @@ public class BookingTests {
     @Test
     public void testPrint() {
         Booking b;
-        b = new Booking(LocalDate.of(1970, 1, 1), 100000);
+        b = new Booking(100000);
         b.print();
-        b = new Booking(LocalDate.of(2000, 1, 1), 1000000000);
+        b = new Booking(1000000000);
         b.print();
     }
 }
