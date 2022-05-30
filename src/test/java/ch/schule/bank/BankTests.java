@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BankTests {
     @Test
     public void testCreate() {
-        Bank b = new Bank();
+        Bank b = Bank.getInstance();
 
         assertEquals("A-1000", b.createAccount().getId());
         assertEquals("S-1001", b.createSavingsAccount().getId());
@@ -24,7 +24,7 @@ public class BankTests {
 
     @Test
     public void testDeposit() {
-        Bank b = new Bank();
+        Bank b = Bank.getInstance();
         b.createAccount();
         b.createAccount();
         b.createAccount();
@@ -44,7 +44,7 @@ public class BankTests {
 
     @Test
     public void testWithdraw() {
-        Bank b = new Bank();
+        Bank b = Bank.getInstance();
         b.createAccount();
         b.createAccount();
         b.createAccount();
@@ -69,7 +69,7 @@ public class BankTests {
     @Test
     public void testPrint() {
         System.out.println("-- Gesamtauszüge --");
-        Bank b = new Bank();
+        Bank b = Bank.getInstance();
 
         b.createAccount();
         b.createAccount();
@@ -87,7 +87,7 @@ public class BankTests {
     public void testTop5() {
         System.out.println("Top 5:");
 
-        Bank b = new Bank();
+        Bank b = Bank.getInstance();
 
         // 7 Konten erzeugen
         for (int i = 0; i < 7; ++i)
@@ -113,7 +113,7 @@ public class BankTests {
     public void testBottom5() {
         System.out.println("Bottom 5:");
 
-        Bank b = new Bank();
+        Bank b = Bank.getInstance();
 
         // 7 Konten erzeugen
         for (int i = 0; i < 7; ++i)

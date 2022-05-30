@@ -3,7 +3,7 @@ package ch.schule;
 public class TestBank {
 
     public static void main(String[] args) {
-        Bank migros = new Bank();
+        Bank migros = Bank.getInstance();
         migros.createAccount();
         migros.createAccount();
         migros.createAccount();
