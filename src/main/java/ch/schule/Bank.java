@@ -6,12 +6,21 @@ import java.util.stream.Collectors;
 
 public class Bank {
 
+    private static Bank instance;
+
     private final Map<String, Account> accounts;
     private int accountNumberIncrement;
 
-    public Bank() {
+    private Bank() {
         accounts = new TreeMap<>();
         accountNumberIncrement = 1000;
+    }
+
+    public static Bank getInstance() {
+        if (instance == null) {
+            instance = new Bank();
+        }
+        return instance;
     }
 
     public void createAccount() {
