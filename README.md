@@ -22,17 +22,16 @@ Aufgaben.
 
 #### Einzahlung und Auszahlung
 
-| Name | **Kunde tätigt eine Ein- oder Auszahlung am Bankschalter
-ein**                                         |
+| Name             | **Kunde tätigt eine Ein- oder Auszahlung am Bankschalter**                                             |
 |------------------|--------------------------------------------------------------------------------------------------------|
-| Kurzbeschreibung | Der Bankangestellte tätigt für den Kunden am Bankschalter eine Ein- oder Auszahlung. |
-| Akteure | Kunde, Bankangestellter |
-| Auslöser | Der Kunde möchte eine Ein- oder Auszahlung tätigen. |
-| Vorbedingungen | Der Kunde muss ein Bankkonto besitzen. |
-| Eingehende Infos | Kundenkonto, Geldmenge |
-| Ergebnis | Bestätigung der Ein- oder Auszahlung |
-| Nachbedingung | Für den Kunden wurde eine Ein- oder Auszahlung für sein Konto getätigt. |
-| Ablauf | 1. Kundenkonto identifizieren <br/> 2. Geldmenge überprüfen <br/> 3. Auf Bankkonto ein- oder auszahlen |
+| Kurzbeschreibung | Der Bankangestellte tätigt für den Kunden am Bankschalter eine Ein- oder Auszahlung.                   |
+| Akteure          | Kunde, Bankangestellter                                                                                |
+| Auslöser         | Der Kunde möchte eine Ein- oder Auszahlung tätigen.                                                    |
+| Vorbedingungen   | Der Kunde muss ein Bankkonto besitzen.                                                                 |
+| Eingehende Infos | Kundenkonto, Geldmenge                                                                                 |
+| Ergebnis         | Bestätigung der Ein- oder Auszahlung                                                                   |
+| Nachbedingung    | Für den Kunden wurde eine Ein- oder Auszahlung für sein Konto getätigt.                                |
+| Ablauf           | 1. Kundenkonto identifizieren <br/> 2. Geldmenge überprüfen <br/> 3. Auf Bankkonto ein- oder auszahlen |
 
 #### Kontoauszug
 
