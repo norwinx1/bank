@@ -12,7 +12,7 @@ public class Bank {
 
     private static Bank instance;
 
-    private final Map<String, Account> accounts;
+    private Map<String, Account> accounts;
     private int accountNumberIncrement;
 
     private Bank() {
@@ -25,6 +25,11 @@ public class Bank {
             instance = new Bank();
         }
         return instance;
+    }
+
+    public void clearAccounts() {
+        accounts = new TreeMap<>();
+        accountNumberIncrement = 1000;
     }
 
     public Account createAccount() {
