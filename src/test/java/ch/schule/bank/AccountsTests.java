@@ -5,7 +5,9 @@ import ch.schule.accounts.SalaryAccount;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.TreeMap;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -51,7 +53,7 @@ public class AccountsTests {
 
     @Test
     public void testWithdraw() {
-        Account a = new SalaryAccount("A-1000");
+        Account a = new SalaryAccount("A-1000", 0);
 
         // CHF 1.-- abheben
         a.withdraw(100000);
@@ -68,6 +70,24 @@ public class AccountsTests {
         // bleiben
         a.withdraw(-50000);
         assertEquals(-300000, a.getBalance());
+    }
+
+    @Test
+    public void testReferences() {
+        TreeMap<String, Account> m = new TreeMap<>();
+        m.put("A-1000", new Account("A-1000"));
+        m.put("A-1001", new Account("A-1001"));
+
+        Account a, b;
+
+        a = m.get("A-1002");
+        assertNull(a);
+        a = m.get("A-1001");
+        assertNotNull(a);
+
+        b = a;
+        a.deposit(1000);
+        assertEquals(1000, b.getBalance());
     }
 
     /**

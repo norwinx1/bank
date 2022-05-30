@@ -1,6 +1,10 @@
 package ch.schule;
 
 import java.time.Instant;
+import ch.schule.accounts.PromoYouthSavingsAccount;
+import ch.schule.accounts.SalaryAccount;
+import ch.schule.accounts.SavingsAccount;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -23,10 +27,32 @@ public class Bank {
         return instance;
     }
 
-    public void createAccount() {
+    public Account createAccount() {
         String accountNumber = "A-" + accountNumberIncrement++;
         Account account = new Account(accountNumber);
         accounts.put(accountNumber, account);
+        return account;
+    }
+
+    public SavingsAccount createSavingsAccount() {
+        String accountNumber = "S-" + accountNumberIncrement++;
+        SavingsAccount account = new SavingsAccount(accountNumber);
+        accounts.put(accountNumber, account);
+        return account;
+    }
+
+    public PromoYouthSavingsAccount createPromoYouthSavingsAccount() {
+        String accountNumber = "Y-" + accountNumberIncrement++;
+        PromoYouthSavingsAccount account = new PromoYouthSavingsAccount(accountNumber);
+        accounts.put(accountNumber, account);
+        return account;
+    }
+
+    public SalaryAccount createSalaryAccount(int creditLimit) {
+        String accountNumber = "P-" + accountNumberIncrement++;
+        SalaryAccount account = new SalaryAccount(accountNumber, creditLimit);
+        accounts.put(accountNumber, account);
+        return account;
     }
 
     public Account getAccount(String accountNumber) {

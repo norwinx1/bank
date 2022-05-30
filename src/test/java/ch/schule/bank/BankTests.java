@@ -17,10 +17,9 @@ public class BankTests {
     public void testCreate() {
         Bank b = new Bank();
 
-        b.createAccount();
-        b.createAccount();
-
-        assertEquals(b.getAccount("A-1000").getId(), "A-1000");
+        assertEquals("A-1000", b.createAccount().getId());
+        assertEquals("S-1001", b.createSavingsAccount().getId());
+        assertEquals("S-1002", b.createSavingsAccount().getId());
     }
 
     @Test
@@ -81,5 +80,56 @@ public class BankTests {
         b.withdraw("A-1001", 4);
     }
 
+    /**
+     * Tested die Ausgabe der "top 5" konten.
+     */
+    @Test
+    public void testTop5() {
+        System.out.println("Top 5:");
+
+        Bank b = new Bank();
+
+        // 7 Konten erzeugen
+        for (int i = 0; i < 7; ++i)
+            b.createSalaryAccount(-100000000);
+
+        // Einzahlungen
+        b.deposit("P-1000", 100);
+        b.deposit("P-1001", 500);
+        b.deposit("P-1002", 300);
+        b.deposit("P-1003", 700);
+        b.deposit("P-1004", 200);
+        b.deposit("P-1005", 400);
+        b.deposit("P-1006", 600);
+
+        // Ausgabe der Top 5
+        b.writeAccountsSortedDescending(5);
+    }
+
+    /**
+     * Tested die Ausgabe der "top 5" konten.
+     */
+    @Test
+    public void testBottom5() {
+        System.out.println("Bottom 5:");
+
+        Bank b = new Bank();
+
+        // 7 Konten erzeugen
+        for (int i = 0; i < 7; ++i)
+            b.createSalaryAccount(-100000000);
+
+        // Einzahlungen
+        b.deposit("P-1000", 100);
+        b.deposit("P-1001", 500);
+        b.deposit("P-1002", 300);
+        b.deposit("P-1003", 700);
+        b.deposit("P-1004", 200);
+        b.deposit("P-1005", 400);
+        b.deposit("P-1006", 600);
+
+        // Ausgabe der Bottom 5
+        b.writeAccountsSortedAscending(5);
+    }
 
 }
