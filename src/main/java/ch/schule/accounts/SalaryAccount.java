@@ -11,7 +11,7 @@ public class SalaryAccount extends Account {
 
     @Override
     public void withdraw(long amount) {
-        if (amount > 0 || (balance-amount) < creditLimit) {
+        if (amount > 0 && (balance-amount) < creditLimit) {
             balance -= amount;
         }
     }
