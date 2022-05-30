@@ -1,6 +1,7 @@
 package ch.schule;
 
 import java.text.DecimalFormat;
+import java.time.Instant;
 
 public class BankUtils {
     /**
@@ -47,5 +48,11 @@ public class BankUtils {
             s = " " + s;
 
         return s;
+    }
+
+    public static boolean compareInstantForMonthAndYear(Instant instantMonthYear, Instant timestamp) {
+        String[] split = timestamp.toString().split("-");
+        Instant instantMonthYearGenerated = Instant.parse(split[0] + "-" + split[1] + "-01T00:00:00Z");
+        return instantMonthYearGenerated.equals(instantMonthYear);
     }
 }
