@@ -18,7 +18,7 @@ public class SalaryAccountTests {
      */
     @Test
     public void test() {
-        SalaryAccount a = new SalaryAccount("C-1000");
+        SalaryAccount a = new SalaryAccount("C-1000", 0);
         a.withdraw(1000);
         assertEquals(-1000, a.getBalance());
 

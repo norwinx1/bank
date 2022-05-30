@@ -1,5 +1,9 @@
 package ch.schule;
 
+import ch.schule.accounts.PromoYouthSavingsAccount;
+import ch.schule.accounts.SalaryAccount;
+import ch.schule.accounts.SavingsAccount;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -16,6 +20,24 @@ public class Bank {
     public void createAccount() {
         String accountNumber = "A-" + accountNumberIncrement++;
         Account account = new Account(accountNumber);
+        accounts.put(accountNumber, account);
+    }
+
+    public void createSavingsAccount() {
+        String accountNumber = "S-" + accountNumberIncrement++;
+        SavingsAccount account = new SavingsAccount(accountNumber);
+        accounts.put(accountNumber, account);
+    }
+
+    public void createPromoYouthSavingsAccount() {
+        String accountNumber = "Y-" + accountNumberIncrement++;
+        PromoYouthSavingsAccount account = new PromoYouthSavingsAccount(accountNumber);
+        accounts.put(accountNumber, account);
+    }
+
+    public void createSalaryAccount(int creditLimit) {
+        String accountNumber = "P-" + accountNumberIncrement++;
+        SalaryAccount account = new SalaryAccount(accountNumber, creditLimit);
         accounts.put(accountNumber, account);
     }
 

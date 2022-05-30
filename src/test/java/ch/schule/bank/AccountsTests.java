@@ -51,7 +51,7 @@ public class AccountsTests {
 
     @Test
     public void testWithdraw() {
-        Account a = new SalaryAccount("A-1000");
+        Account a = new SalaryAccount("A-1000", 0);
 
         // CHF 1.-- abheben
         a.withdraw(100000);
