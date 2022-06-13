@@ -30,30 +30,26 @@ public class Bank {
     }
 
     public Account createAccount() {
-        String accountNumber = "A-" + accountNumberIncrement++;
-        Account account = new Account(accountNumber);
-        accounts.put(accountNumber, account);
+        Account account = Factory.createAccount(accountNumberIncrement++);
+        accounts.put(account.id, account);
         return account;
     }
 
     public SavingsAccount createSavingsAccount() {
-        String accountNumber = "S-" + accountNumberIncrement++;
-        SavingsAccount account = new SavingsAccount(accountNumber);
-        accounts.put(accountNumber, account);
+        SavingsAccount account = Factory.createSavingsAccount(accountNumberIncrement++);
+        accounts.put(account.id, account);
         return account;
     }
 
     public PromoYouthSavingsAccount createPromoYouthSavingsAccount() {
-        String accountNumber = "Y-" + accountNumberIncrement++;
-        PromoYouthSavingsAccount account = new PromoYouthSavingsAccount(accountNumber);
-        accounts.put(accountNumber, account);
+        PromoYouthSavingsAccount account = Factory.createPromoYouthSavingsAccount(accountNumberIncrement++);
+        accounts.put(account.id, account);
         return account;
     }
 
     public SalaryAccount createSalaryAccount(int creditLimit) {
-        String accountNumber = "P-" + accountNumberIncrement++;
-        SalaryAccount account = new SalaryAccount(accountNumber, creditLimit);
-        accounts.put(accountNumber, account);
+        SalaryAccount account = Factory.createSalaryAccount(creditLimit, accountNumberIncrement++);
+        accounts.put(account.id, account);
         return account;
     }
 
