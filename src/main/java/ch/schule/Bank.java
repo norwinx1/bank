@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class Bank {
 
-    private static Bank instance;
+    private static final Bank instance = new Bank();
 
     private Map<String, Account> accounts;
     private int accountNumberIncrement;
@@ -21,9 +21,6 @@ public class Bank {
     }
 
     public static Bank getInstance() {
-        if (instance == null) {
-            instance = new Bank();
-        }
         return instance;
     }
 
